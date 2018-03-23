@@ -4,7 +4,7 @@ A proof of concept and a working example of a relatively novel approach to exten
 
 [![Build Status][build status image]][build status url]
 [![Dev Dependencies][dep status image]][dep status url]
-[![NPM Version][nmp version image]][npm version url]
+[![NPM Version][npm version image]][npm version url]
 [![License][license image]][license url]
 
 symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties to prevent naming conflicts. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
@@ -22,8 +22,8 @@ The library is usable but still in an early stage of development, so breaking ch
 ```js
 import { toMap, toSet } from 'symbol-land';
 
-{ a: 1, b: 2 }[toMap]() // -> Map { a: 1, b: 2 }
-[1, 2, 3][toSet]() // -> Set { 1, 2, 3 }
+{ a: 1, b: 2 }[toMap](); // -> Map { a: 1, b: 2 }
+[1, 2, 3][toSet](); // -> Set { 1, 2, 3 }
 ```
 The values of `toMap` and `toSet` are unique symbols that are used to look up the methods from the prototype chain of the objects.
 
