@@ -9,7 +9,7 @@ A proof of concept and a working example of a relatively novel approach to exten
 
 symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties to prevent naming conflicts. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
 
-The library adapts the *[Fantasy Land]* specification to symbol properties, hence the name symbol land.
+The library adapts the [Fantasy Land] specification to symbol properties, hence the name symbol land.
 
 ## Work in progress
 
@@ -40,7 +40,7 @@ The convenience of extending the native prototypes has been the motivating reaso
 
 Like with `for-of` and `for-await-of` loops, any object implementing the [iteration protocols] can be iterated over:
 ```js
-import { map } from "symbol-land";
+import { map, join } from "symbol-land";
 
 [[1, 2], [3]][join](); // -> [1, 2, 3]
 "abc"[map](x => x.toUpperCase()); // -> IterableIterator { "A", "B", "C" }
@@ -54,7 +54,7 @@ The iteration works generically (is not bound to specific subtypes of `Object`) 
 import * as symbolLand from 'symbol-land';
 
 const map = Symbol(); // make a new unique symbol
-Object.prototype[map] = null; // the symbol land method is not overridden because the symbol is unique
+Object.prototype[map] = null; // the symbol land method is not overridden because the symbols are unique
 [1, 2, 3][symbolLand.map](Math.sign); // -> [1, 1, 1]
 ``` 
 Generic iterables include [generators] and `NodeList` objects:
@@ -75,6 +75,8 @@ Infinity[times](Math.random)[take](5); // returns five random numbers, despite t
 (5)[times](n => `http://example.com/?page=${n}`)[map](fetch); // returns a lazy iterable of fetch requests that can be started sequentially instead of all at once
 ```
 The `times` method is also an example of other useful extensions to the language enabled by the approach of symbol land, in this case operating on numbers.
+
+<!-- XXX add example of eager iteration -->
 
 ### Function composition
 
@@ -103,9 +105,13 @@ Set[of](1); // -> Set { 1 }
 ```
 The `from` method works generically on all constructible types, making `new` calls more composable.
 
+### TODO
+
+More examples to be covered here are async iteration (converting event streams to async iterables to iterate over) and calling symbol methods with the receiver or `this` context as a regular parameter.
+
 ## Installation and usage
 ```
-npm install -S symbol-land
+npm install --save symbol-land
 # or
 yarn add symbol-land
 ```
@@ -124,11 +130,11 @@ Integration with other Fantasy Land compliant libraries needs to be explored; sy
 
 ## Limitations
 
-`null` and `undefined` values do not have a prototype so attempting to call any method on these values will throw a `TypeError` exception; this is one area where a syntactical language extension like the pipeline operator would work better than metaprogramming with symbols. The solution for using methods with nullable values is wrapping them in 'option types' from the functional paradigm like `Maybe` or `Result`.
+`null` and `undefined` values do not have a prototype so attempting to call any method on these values will throw a `TypeError` exception; this is an area where a syntactical language extension like the pipeline operator would work better than metaprogramming with symbols. The solution for using methods with nullable values is wrapping them in 'option types' from the functional paradigm like `Maybe` or `Result`.
 
 ## Performance
 
-The performance implications of extending native prototypes with symbol properties remains to be explored.
+The performance implications of extending native prototypes with symbol properties remain to be explored.
 
 ## Rationale for generic iteration
 
