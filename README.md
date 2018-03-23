@@ -1,4 +1,4 @@
-![image](http://sile.untu.ms/untitled.png)
+![image][logo]
 
 A proof of concept and a working example of a relatively novel approach to extending the JavaScript language using metaprogramming with [ES2015 symbols][symbols]; futuristic JavaScript that's usable today and requires no non-standard syntax or compilation
 
@@ -7,7 +7,7 @@ A proof of concept and a working example of a relatively novel approach to exten
 [![NPM Version][npm version image]][npm version url]
 [![License][license image]][license url]
 
-symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties to prevent naming conflicts. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
+symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties while preventing name collisions. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
 
 The library adapts the [Fantasy Land] specification to symbol properties, hence the name symbol land.
 
@@ -167,12 +167,12 @@ symbol land is MIT licensed.
 [Fluture]: https://github.com/fluture-js/Fluture
 [fp-ts]: https://github.com/gcanti/fp-ts
 
-
 [license url]: LICENSE
-[license image]: http://img.shields.io/npm/l/symbol-land.svg
+[license image]: https://img.shields.io/npm/l/symbol-land.svg
 [npm version image]: https://img.shields.io/npm/v/symbol-land.svg
 [npm version url]: https://www.npmjs.com/package/symbol-land
 [build status url]: https://travis-ci.org/slikts/symbol-land
 [build status image]: https://travis-ci.org/slikts/symbol-land.svg?branch=master
 [dep status url]: https://david-dm.org/slikts/symbol-land#info=devDependencies
 [dep status image]: https://david-dm.org/slikts/symbol-land/dev-status.svg
+[logo]: https://i.imgur.com/etRAUn5.png
