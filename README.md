@@ -3,6 +3,7 @@
 A proof of concept and a working example of a relatively novel approach to extending the JavaScript language using metaprogramming with [ES2015 symbols][symbols]; futuristic JavaScript that's usable today and requires no non-standard syntax or compilation
 
 [![Build Status][build status image]][build status url]
+[![Dependencies][dependencies image]][dependencies url]
 [![Dev Dependencies][dep status image]][dep status url]
 [![NPM Version][npm version image]][npm version url]
 [![License][license image]][license url]
@@ -176,3 +177,5 @@ symbol land is MIT licensed.
 [dep status url]: https://david-dm.org/slikts/symbol-land#info=devDependencies
 [dep status image]: https://david-dm.org/slikts/symbol-land/dev-status.svg
 [logo]: https://i.imgur.com/etRAUn5.png
+[dependencies image]: https://david-dm.org/ramda/ramda.svg
+[dependencies url]: https://david-dm.org/ramda/ramda
