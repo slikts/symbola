@@ -7,7 +7,7 @@ A proof of concept and a working example of a relatively novel approach to exten
 [![NPM Version][npm version image]][npm version url]
 [![License][license image]][license url]
 
-symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties while preventing name collisions. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
+symbol land is a functional utility library that extends the native JavaScript object prototypes using unique symbol properties to prevent name collisions. A major purpose of the library is to simplify iterating over and instantiating the JavaScript built-in data structures by removing the need for explicit conversions to and from arrays or the need to wrap the data values in helper functions creating nesting; instead, operations like iteration are available as prototypal function properties on the objects, enabling a more idiomatic and 'flat' JavaScript programing style.
 
 The library adapts the [Fantasy Land] specification to symbol properties, hence the name symbol land.
 

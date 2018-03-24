@@ -1,11 +1,18 @@
 import { HKT } from "fp-ts/lib/HKT";
 import { Function1 } from "fp-ts/lib/function";
-import { map, ap, chain, concat, reduce, empty, lte, equals } from "../..";
-import { takeWhile } from "./IterableExtraOperations";
-import { join } from "./IterableExtraOperations";
-import { keepSpecies } from "../../util";
-import * as util from "../../util";
 import {
+  map,
+  ap,
+  chain,
+  concat,
+  reduce,
+  empty,
+  lte,
+  equals,
+  of,
+  from,
+  join,
+  takeWhile,
   Apply,
   Semigroupoid,
   Foldable,
@@ -13,7 +20,12 @@ import {
   Ord,
   Chain,
   Setoid,
+  Applicative,
 } from "../..";
+import * as util from "../../util";
+import { Newable } from "../../common";
+
+const { keepSpecies } = util;
 
 import URI from "./ObjectURI";
 
@@ -24,7 +36,8 @@ interface FantasyOperations<F>
     Ord<F>,
     Setoid<F>,
     Foldable<F>,
-    Setoid<F> {}
+    Setoid<F>,
+    Applicative<F> {}
 
 export default abstract class IterableFantasy
   implements FantasyOperations<URI> {
@@ -111,6 +124,10 @@ export default abstract class IterableFantasy
       return true;
     }
     return Object.is(this, a);
+  }
+
+  [of]<A>(this: Newable<Iterable<A>, Iterable<A>>, a: A): Iterable<A> {
+    return this[from]([a]);
   }
 }
 
