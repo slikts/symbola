@@ -22,6 +22,7 @@ export * from "./native/NumberExtra";
 export * from "./native/ArrayConstructorExtra";
 export * from "./native/ArrayExtra";
 export * from "./native/MapConstructorExtra";
+export * from "./native/SymbolExtra";
 
 export * from "./Object";
 
