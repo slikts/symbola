@@ -2,7 +2,7 @@ import { HKT } from "fp-ts/lib/HKT";
 import { Newable } from "../../common";
 import * as util from "../../util";
 import URI from "./ObjectURI";
-import { from } from "./IterableExtraOperations";
+import { from, to } from "./IterableExtraOperations";
 
 export const is = Symbol("is");
 
@@ -16,6 +16,10 @@ export default abstract class ObjectExtra {
     a: Iterable<A>,
   ): Iterable<A> {
     return new this(a);
+  }
+
+  [to]<A, B>(this: A, b: Newable<A, B>): B {
+    return new b(this);
   }
 }
 

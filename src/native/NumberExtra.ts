@@ -3,7 +3,6 @@ import { range } from "./NumberConstructorExtra";
 import { map, take, lte, equals, Ord } from "..";
 import * as util from "../util";
 
-export const to = Symbol("to");
 export const times = Symbol("times");
 export const add = Symbol("add");
 export const subtract = Symbol("subtract");
@@ -16,10 +15,6 @@ export default interface NumberExtra {
 };
 
 export default abstract class NumberExtra implements Ord<URI> {
-  [to](this: number, n: number): IterableIterator<number> {
-    return Number[range](this, n);
-  }
-
   [lte](this: number, n: number): boolean {
     return this <= n;
   }
@@ -28,8 +23,8 @@ export default abstract class NumberExtra implements Ord<URI> {
     return Object.is(this, n);
   }
 
-  [times](this: number) {
-    return (0)[to](this);
+  [times]<A>(this: number, f: (i: number) => A) {
+    return Array.from({ length: this }, (_, i) => f(i));
   }
 
   [add](this: number): Function1<number, number> {
