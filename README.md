@@ -14,6 +14,8 @@ The library adapts the [Fantasy Land] specification to symbol properties, hence 
 
 ## Work in progress
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/slikts/symbol-land.svg)](https://greenkeeper.io/)
+
 The library is usable but still in an early stage of development, so breaking changes are expected and major parts are not yet implemented; contributions and criticisms are welcome.
 
 ## Examples
