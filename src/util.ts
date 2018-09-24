@@ -32,7 +32,7 @@ export const makeSpeciesWrapper = (name: string | symbol, f: Function) =>
       }
       return result;
     }
-  }[name]);
+  }[name as any]);
 
 export const keepSpecies = (
   _: any,
