@@ -1,14 +1,14 @@
 {
   "name": "symbol-land",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.0-alpha",
+  "description": "Utility library implemented with symbol protocol extension",
   "main": "index.js",
   "scripts": {
     "test": "node --harmony-async-iteration node_modules/.bin/jest",
     "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "slikts <dabas@untu.ms>",
   "license": "MIT",
   "dependencies": {
     "fp-ts": "^1.2.0"
@@ -37,5 +37,16 @@
   },
   "prettier": {
     "trailingComma": "all"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slikts/symbol-land.git"
+  },
+  "bugs": {
+    "url": "https://github.com/slikts/symbol-land/issues"
+  },
+  "homepage": "https://github.com/slikts/symbol-land#readme"
 }
