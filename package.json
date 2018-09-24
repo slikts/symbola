@@ -2,7 +2,8 @@
   "name": "symbol-land",
   "version": "1.0.1",
   "description": "Utility library implemented with symbol protocol extension",
-  "main": "dist/index.js",
+  "main": "dist/index",
+  "typings": "src/index",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch --runInBand --verbose false",
