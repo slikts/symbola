@@ -2,10 +2,11 @@
   "name": "symbol-land",
   "version": "1.0.0-alpha",
   "description": "Utility library implemented with symbol protocol extension",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node node_modules/.bin/jest",
-    "test:watch": "npm run test -- --watch"
+    "test": "jest",
+    "test:watch": "jest --watch --runInBand --verbose false",
+    "build": "rimraf dist; tsc"
   },
   "keywords": [],
   "author": "slikts <dabas@untu.ms>",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.2",
     "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
     "ts-jest": "^23.10.1",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
