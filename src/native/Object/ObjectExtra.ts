@@ -1,10 +1,15 @@
 import { HKT } from "fp-ts/lib/HKT";
+import { AsyncQueue } from "@slikts/asyncqueue";
 import { Newable } from "../../common";
 import * as util from "../../util";
 import URI from "./ObjectURI";
-import { from, to } from "./IterableExtraOperations";
+import { from, to, of } from "./IterableExtraOperations";
 
 export const is = Symbol("is");
+
+interface Listenable extends EventTarget  {
+  addEventListener(type: string, listener: EventListenerOrEventListenerObject, ...rest: any[]): void;
+}
 
 export default abstract class ObjectExtra {
   [is](x: Newable<any, object>): boolean {
@@ -20,6 +25,12 @@ export default abstract class ObjectExtra {
 
   [to]<A, B>(this: A, b: Newable<A, B>): B {
     return new b(this);
+  }
+
+  [of]<A>(this: EventTarget, type: string): AsyncIterableIterator<A> {
+    const queue = new AsyncQueue<A>()
+    this.addEventListener(type, event => queue.push(event))
+    return queue[Symbol.asyncIterator]()
   }
 }
 

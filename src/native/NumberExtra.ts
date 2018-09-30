@@ -23,7 +23,7 @@ export default abstract class NumberExtra implements Ord<URI> {
     return Object.is(this, n);
   }
 
-  [times]<A>(this: number, f: (i: number) => A) {
+  [times]<A>(this: number, f: (i: number) => A): A[] {
     return Array.from({ length: this }, (_, i) => f(i));
   }
 
