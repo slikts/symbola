@@ -1,4 +1,4 @@
-![image][logo]
+<h1 align="center"><img src="https://i.imgur.com/qcZMjYj.png" width="601" height="200" alt="Symbola"></h1>
 
 A proof of concept and a working example of a relatively novel approach to extending the JavaScript language using metaprogramming with [ES2015 symbols][symbols]; futuristic JavaScript that's usable today and requires no non-standard syntax or compilation
 
@@ -176,6 +176,5 @@ symbol land is MIT licensed.
 [build status image]: https://travis-ci.org/slikts/symbol-land.svg?branch=master
 [dep status url]: https://david-dm.org/slikts/symbol-land#info=devDependencies
 [dep status image]: https://david-dm.org/slikts/symbol-land/dev-status.svg
-[logo]: https://i.imgur.com/etRAUn5.png
 [dependencies image]: https://david-dm.org/ramda/ramda.svg
 [dependencies url]: https://david-dm.org/ramda/ramda
