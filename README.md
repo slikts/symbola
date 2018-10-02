@@ -21,7 +21,7 @@ The library is usable but still in an early stage of development, so breaking ch
 ### Instantiation/conversion
 
 ```js
-import { toMap, toSet } from 'symbol-land';
+import { toMap, toSet } from 'symbola';
 
 { a: 1, b: 2 }[toMap](); // -> Map { a: 1, b: 2 }
 [1, 2, 3][toSet](); // -> Set { 1, 2, 3 }
@@ -41,7 +41,7 @@ The convenience of extending the native prototypes has been the motivating reaso
 
 Like with `for-of` and `for-await-of` loops, any object implementing the [iteration protocols] can be iterated over:
 ```js
-import { map, join } from "symbol-land";
+import { map, join } from "symbola";
 
 [[1, 2], [3]][join](); // -> [1, 2, 3]
 "abc"[map](x => x.toUpperCase()); // -> IterableIterator { "A", "B", "C" }
@@ -52,7 +52,7 @@ new Set([1, 2, 3])[map](x => x + 1); // -> Set { 1, 2, 3 }
 ```
 The iteration works generically (is not bound to specific subtypes of `Object`) because the methods for generic iteration are defined at the root of the prototype chain on `Object.prototype`; however, naming conflicts with other libraries or user code for the methods are not possible, because the method names are [unique symbols][symbols]. To illustrate:
 ```js
-import * as symbolLand from 'symbol-land';
+import * as symbolLand from 'symbola';
 
 const map = Symbol(); // make a new unique symbol
 Object.prototype[map] = null; // the symbol land method is not overridden because the symbols are unique
@@ -60,7 +60,7 @@ Object.prototype[map] = null; // the symbol land method is not overridden becaus
 ``` 
 Generic iterables include [generators] and `NodeList` objects:
 ```js
-import { map, forEach } from "symbol-land";
+import { map, forEach } from "symbola";
 
 const generator = function*() { yield 1; yield 2; yield 3; }
 generator()[map](x => x + 1); // -> [2, 3, 4]
@@ -70,7 +70,7 @@ nodeList[forEach](console.log); // logs every element in the document to the con
 ```
 An important aspect of generic iterables is that they are **lazy** as opposed to eager; the iteration is only performed when the lazy iterator is 'consumed'. Lazy iteration is useful when dealing with very long or infinite iterables or when the operations are 'expensive' in some way.
 ```js
-import { times } from "symbol-land";
+import { times } from "symbola";
 
 Infinity[times](Math.random)[take](5); // returns five random numbers, despite the iterable being infinite
 (5)[times](n => `http://example.com/?page=${n}`)[map](fetch); // returns a lazy iterable of fetch requests that can be started sequentially instead of all at once
@@ -82,7 +82,7 @@ The `times` method is also an example of other useful extensions to the language
 ### Function composition
 
 ```js
-import { compose } from "symbol-land";
+import { compose } from "symbola";
 
 Math.round[compose](Math.sqrt); // -> x => Math.round(Math.sqrt(x));
 // XXX to be expanded
@@ -90,7 +90,7 @@ Math.round[compose](Math.sqrt); // -> x => Math.round(Math.sqrt(x));
 
 ### Logging
 ```js
-import { log } from "symbol-land/util/log";
+import { log } from "symbola/util/log";
 
 [1, 2][log](); // logs [1, 2]
 foo(bar()[log]('bar')); // logs ('bar', bar()) and returns the result of bar()
@@ -99,7 +99,7 @@ The ability to log non-null values by just calling a method instead of wrapping 
 
 ### Construction
 ```js
-import { of, from } from "symbol-land";
+import { of, from } from "symbola";
 
 Set[from]([1, 2, 3]); // -> Set { 1, 2, 3 }
 Set[of](1); // -> Set { 1 }
@@ -112,13 +112,13 @@ More examples to be covered here are async iteration (converting event streams t
 
 ## Installation and usage
 ```
-npm install --save symbol-land
+npm install --save symbola
 # or
-yarn add symbol-land
+yarn add symbola
 ```
 Importing the operators will set them up on the native prototypes:
 ```js
-import { map } from "symbol-land";
+import { map } from "symbola";
 ```
 
 ## Functional programming
@@ -169,12 +169,12 @@ symbol land is MIT licensed.
 [fp-ts]: https://github.com/gcanti/fp-ts
 
 [license url]: LICENSE
-[license image]: https://img.shields.io/npm/l/symbol-land.svg
-[npm version image]: https://img.shields.io/npm/v/symbol-land.svg
-[npm version url]: https://www.npmjs.com/package/symbol-land
-[build status url]: https://travis-ci.org/slikts/symbol-land
-[build status image]: https://travis-ci.org/slikts/symbol-land.svg?branch=master
-[dep status url]: https://david-dm.org/slikts/symbol-land#info=devDependencies
-[dep status image]: https://david-dm.org/slikts/symbol-land/dev-status.svg
-[dependencies image]: https://david-dm.org/ramda/ramda.svg
-[dependencies url]: https://david-dm.org/ramda/ramda
+[license image]: https://img.shields.io/npm/l/symbola.svg
+[npm version image]: https://img.shields.io/npm/v/symbola.svg
+[npm version url]: https://www.npmjs.com/package/symbola
+[build status url]: https://travis-ci.org/slikts/symbola
+[build status image]: https://travis-ci.org/slikts/symbola.svg?branch=master
+[dep status url]: https://david-dm.org/slikts/symbola#info=devDependencies
+[dep status image]: https://david-dm.org/slikts/symbola/dev-status.svg
+[dependencies image]: https://david-dm.org/symbola/symbola.svg
+[dependencies url]: https://david-dm.org/symbola/symbola
