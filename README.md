@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://i.imgur.com/qcZMjYj.png" width="601" height="200" alt="Symbola"></h1>
+<h1 align="center"><img src="https://i.imgur.com/cD3H3kV.png" width="541" height="180" alt="Symbola"></h1>
 
 A proof of concept and a working example of a relatively novel approach to extending the JavaScript language using metaprogramming with [ES2015 symbols][symbols]; futuristic JavaScript that's usable today and requires no non-standard syntax or compilation
 
