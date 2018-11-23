@@ -1,5 +1,5 @@
 import { HKT } from "fp-ts/lib/HKT";
-import { AsyncQueue } from "@slikts/asyncqueue";
+import { LastResult } from "queueable";
 import { Newable } from "../../common";
 import * as util from "../../util";
 import URI from "./ObjectURI";
@@ -10,6 +10,9 @@ export const is = Symbol("is");
 interface Listenable extends EventTarget  {
   addEventListener(type: string, listener: EventListenerOrEventListenerObject, ...rest: any[]): void;
 }
+
+const isEventTarget = (x: any): x is EventTarget => x && x.addEventListener && x.removeEventListener
+const isEventEmitter = (x: any): x is EventTarget => x && x.addEventListener && x.removeEventListener
 
 export default abstract class ObjectExtra {
   [is](x: Newable<any, object>): boolean {
@@ -27,11 +30,14 @@ export default abstract class ObjectExtra {
     return new b(this);
   }
 
-  [of]<A>(this: EventTarget, type: string): AsyncIterableIterator<A> {
-    const queue = new AsyncQueue<A>()
-    this.addEventListener(type, event => queue.push(event))
-    return queue[Symbol.asyncIterator]()
-  }
+  // [of]<A, B>(this: EventTarget | NodeJS.EventEmitter, type: A): AsyncIterableIterator<B> {
+  //   if (isEventTarget(this)) {
+  //     return LastResult.fromDom(type, this)
+  //   }
+  //   if (isEventEmitter(this)) {
+  //     return LastResult.fromEmitter(type, this);
+  //   }
+  // }
 }
 
 util.extend(Object.prototype, ObjectExtra.prototype);
