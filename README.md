@@ -114,12 +114,18 @@ The `from` method works generically on all constructible types, making `new` cal
 
 More examples to be covered here are async iteration (converting event streams to async iterables to iterate over) and calling symbol methods with the receiver or `this` context as a regular parameter.
 
-## Installation and usage
+## Installation
+
+### npm
 ```
 npm install --save symbola
-# or
-yarn add symbola
 ```
+### CDN
+
+TODO
+
+## Usage
+
 Importing the operators will set them up on the native prototypes:
 ```js
 import { map } from "symbola";
