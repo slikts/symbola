@@ -1,11 +1,11 @@
 <h1 align="center"><img src="https://raw.githubusercontent.com/slikts/symbola/master/logo.png?sanitize=true" width="541" height="180" alt="Symbola"></h1>
 
 <p align="center">
-  <a href="https://travis-ci.org/slikts/symbola"><img src="https://camo.githubusercontent.com/bddf1cd9db316e5a3f9470115f7d8ebe6eebf0db/68747470733a2f2f7472617669732d63692e6f72672f736c696b74732f73796d626f6c612e7376673f6272616e63683d6d6173746572" alt="Build Status"></a>
-  <a href="https://david-dm.org/symbola/symbola"><img src="https://camo.githubusercontent.com/91e330e0d90917aac785532e51cad0ac318f16eb/68747470733a2f2f64617669642d646d2e6f72672f73796d626f6c612f73796d626f6c612e737667" alt="Dependencies"></a>
-  <a href="https://david-dm.org/slikts/symbola#info=devDependencies"><img src="https://camo.githubusercontent.com/ee171256dac214ecb2a0aed6f1c2f4fc1c7b1da8/68747470733a2f2f64617669642d646d2e6f72672f736c696b74732f73796d626f6c612f6465762d7374617475732e737667" alt="Dev Dependencies"></a>
-  <a href="https://www.npmjs.com/package/symbola"><img src="https://camo.githubusercontent.com/779c0da5d5f65ccd81abb7b7458bb0d1d6070fdb/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f73796d626f6c612e737667" alt="NPM Version"></a>
-  <a href="/slikts/symbola/blob/master/LICENSE"><img src="https://camo.githubusercontent.com/2ba8360e08e6b46f04bf4b73769e8e551bb8f60d/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f73796d626f6c612e737667" alt="License"></a>
+  <a href="https://travis-ci.org/slikts/symbola"><img src="https://travis-ci.org/slikts/symbola.svg?branch=master" alt="Build Status"></a>
+  <a href="https://david-dm.org/slikts/symbola"><img src="https://david-dm.org/slikts/symbola.svg" alt="Dependencies"></a>
+  <a href="https://david-dm.org/slikts/symbola#info=devDependencies"><img src="https://david-dm.org/slikts/symbola/dev-status.svg" alt="Dev Dependencies"></a>
+  <a href="https://www.npmjs.com/package/symbola"><img src="https://img.shields.io/npm/v/symbola.svg" alt="NPM Version"></a>
+  <a href="/slikts/symbola/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/symbola.svg" alt="License"></a>
 </p>
 
 A proof of concept and a working example of a relatively novel approach to extending the JavaScript language using metaprogramming with [ES2015 symbols][symbols]; futuristic JavaScript that's usable today and requires no non-standard syntax or compilation
@@ -175,3 +175,4 @@ slikts <dabas@untu.ms>
 [flatten]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatten
 [Fluture]: https://github.com/fluture-js/Fluture
 [fp-ts]: https://github.com/gcanti/fp-ts
+
