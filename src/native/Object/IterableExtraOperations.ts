@@ -36,4 +36,5 @@ export const groupWith = Symbol("groupWith");
 export const append = Symbol("append");
 export const from = Symbol("from");
 export const to = Symbol("to");
-export const of = Symbol("of");
+// TODO:
+// export const of = Symbol("of");

@@ -6,11 +6,12 @@ extend(Object.prototype, Loggable.prototype, {
   [logger]: console.log
 });
 
-global.log = log;
+// TODO:
+// global.log = log;
 type log = typeof log;
 declare global {
   interface Object extends Loggable {}
-  const global: Indexable<any>;
+  // const global: Indexable<any>;
   const log: log;
 }
 

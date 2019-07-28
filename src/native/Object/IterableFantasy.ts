@@ -115,7 +115,8 @@ export default abstract class IterableFantasy
         if (
           r1.done ||
           r2.done ||
-          (r1.value && r2.value && !r1.value[equals](r2.value)) ||
+          // TODO:
+          // (r1.value && r2.value && !r1.value[equals](r2.value)) ||
           !Object.is(r1.value, r2.value)
         ) {
           return false;

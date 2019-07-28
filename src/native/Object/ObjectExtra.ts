@@ -3,7 +3,7 @@ import { LastResult } from "queueable";
 import { Newable } from "../../common";
 import * as util from "../../util";
 import URI from "./ObjectURI";
-import { from, to, of } from "./IterableExtraOperations";
+import { from, to } from "./IterableExtraOperations";
 
 export const is = Symbol("is");
 
@@ -30,6 +30,7 @@ export default abstract class ObjectExtra {
     return new b(this);
   }
 
+  // TODO:
   // [of]<A, B>(this: EventTarget | NodeJS.EventEmitter, type: A): AsyncIterableIterator<B> {
   //   if (isEventTarget(this)) {
   //     return LastResult.fromDom(type, this)
