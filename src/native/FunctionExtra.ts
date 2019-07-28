@@ -1,22 +1,8 @@
 import * as fp from "fp-ts/lib/function";
 import {
-  Function1,
-  Function2,
-  Function3,
-  Function4,
-  Function5,
-  Function6,
-  Function7,
-  Function8,
-  Function9,
-  Curried2,
-  Curried3,
-  Curried4,
-  Curried5,
-  Curried6,
-  Curried7,
-  Curried8,
-  Curried9
+  FunctionN,
+  // TODO: fp-ts
+  // CurriedN
 } from "fp-ts/lib/function";
 import { Predicate } from "../common";
 
@@ -60,26 +46,27 @@ export default abstract class FunctionExtra {
     }) as any) as A;
   }
 
-  [curry]<A, B, C>(this: Function2<A, B, C>): Curried2<A, B, C>;
-  [curry]<A, B, C, D>(this: Function3<A, B, C, D>): Curried3<A, B, C, D>;
-  [curry]<A, B, C, D, E>(
-    this: Function4<A, B, C, D, E>
-  ): Curried4<A, B, C, D, E>;
-  [curry]<A, B, C, D, E, F>(
-    this: Function5<A, B, C, D, E, F>
-  ): Curried5<A, B, C, D, E, F>;
-  [curry]<A, B, C, D, E, F, G>(
-    this: Function6<A, B, C, D, E, F, G>
-  ): Curried6<A, B, C, D, E, F, G>;
-  [curry]<A, B, C, D, E, F, G, H, I>(
-    this: Function7<A, B, C, D, E, F, G, H>
-  ): Curried7<A, B, C, D, E, F, G, H>;
-  [curry]<A, B, C, D, E, F, G, H, I>(
-    this: Function8<A, B, C, D, E, F, G, H, I>
-  ): Curried8<A, B, C, D, E, F, G, H, I>;
-  [curry]<A, B, C, D, E, F, G, H, I, J>(
-    this: Function9<A, B, C, D, E, F, G, H, I, J>
-  ): Curried9<A, B, C, D, E, F, G, H, I, J> {
-    return fp.curry(this);
-  }
+  // TODO: fp-ts
+  // [curry]<A, B, C>(this: Function2<A, B, C>): Curried2<A, B, C>;
+  // [curry]<A, B, C, D>(this: Function3<A, B, C, D>): Curried3<A, B, C, D>;
+  // [curry]<A, B, C, D, E>(
+  //   this: Function4<A, B, C, D, E>
+  // ): Curried4<A, B, C, D, E>;
+  // [curry]<A, B, C, D, E, F>(
+  //   this: Function5<A, B, C, D, E, F>
+  // ): Curried5<A, B, C, D, E, F>;
+  // [curry]<A, B, C, D, E, F, G>(
+  //   this: Function6<A, B, C, D, E, F, G>
+  // ): Curried6<A, B, C, D, E, F, G>;
+  // [curry]<A, B, C, D, E, F, G, H, I>(
+  //   this: Function7<A, B, C, D, E, F, G, H>
+  // ): Curried7<A, B, C, D, E, F, G, H>;
+  // [curry]<A, B, C, D, E, F, G, H, I>(
+  //   this: Function8<A, B, C, D, E, F, G, H, I>
+  // ): Curried8<A, B, C, D, E, F, G, H, I>;
+  // [curry]<A, B, C, D, E, F, G, H, I, J>(
+  //   this: Function9<A, B, C, D, E, F, G, H, I, J>
+  // ): Curried9<A, B, C, D, E, F, G, H, I, J> {
+  //   return fp.curry(this);
+  // }
 }

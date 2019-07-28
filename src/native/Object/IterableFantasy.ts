@@ -1,5 +1,5 @@
 import { HKT } from "fp-ts/lib/HKT";
-import { Function1 } from "fp-ts/lib/function";
+// import { Function1 } from "fp-ts/lib/function";
 import {
   map,
   ap,

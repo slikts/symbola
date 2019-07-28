@@ -1,4 +1,4 @@
-import { Function1 } from "fp-ts/lib/function";
+// import { Function1 } from "fp-ts/lib/function";
 import { range } from "./NumberConstructorExtra";
 import { map, take, lte, equals, Ord } from "..";
 import * as util from "../util";

@@ -1,4 +1,4 @@
-import { Function1 } from "fp-ts/lib/function";
+// import { Function1 } from "fp-ts/lib/function";
 import { range } from "./NumberConstructorExtra";
 import { map, take, lte, equals, Ord } from "..";
 import * as util from "../util";
@@ -27,17 +27,18 @@ export default abstract class NumberExtra implements Ord<URI> {
     return Array.from({ length: this }, (_, i) => f(i));
   }
 
-  [add](this: number): Function1<number, number> {
-    return (n: number) => this + n;
-  }
+  // TODO:
+  // [add](this: number): Function1<number, number> {
+  //   return (n: number) => this + n;
+  // }
 
-  [subtract](this: number): Function1<number, number> {
-    return (n: number) => this + n;
-  }
+  // [subtract](this: number): Function1<number, number> {
+  //   return (n: number) => this + n;
+  // }
 
-  [divide](this: number): Function1<number, number> {
-    return (n: number) => this / n;
-  }
+  // [divide](this: number): Function1<number, number> {
+  //   return (n: number) => this / n;
+  // }
 }
 
 declare global {

@@ -1,5 +1,5 @@
 import { HKT } from "fp-ts/lib/HKT";
-import { Function1 } from "fp-ts/lib/function";
+// import { Function1 } from "fp-ts/lib/function";
 import { Predicate, Predicate2, Entries, Newable } from "../../common";
 import { keepSpecies, updateMap } from "../../util";
 import * as util from "../../util";
