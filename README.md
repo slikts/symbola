@@ -1,3 +1,5 @@
+<p align=center><a href=https://github.com/symbola/symbola><b>⚠️ Moved to https://github.com/symbola/symbola ⚠️</b></a></p>
+
 <h1 align="center"><img src="https://raw.githubusercontent.com/slikts/symbola/master/logo.png?sanitize=true" width="541" height="180" alt="Symbola"></h1>
 
 <p align="center">
